@@ -1,12 +1,9 @@
 #include "http_tcpServer_linux.hpp"
-
 #include <iostream>
 #include <sstream>
 #include <unistd.h>
 
-namespace
-{
-    const int BUFFER_SIZE = 30720;
+ const int BUFFER_SIZE = 30720;
 
     void log(const std::string &message)
     {
@@ -18,12 +15,9 @@ namespace
         log("ERROR: " + errorMessage);
         exit(1);
     }
-}
 
-namespace http
-{
 
-    TcpServer::TcpServer(std::string ip_address, int port) : m_ip_address(ip_address), m_port(port), m_socket(), m_new_socket(),
+TcpServer::TcpServer(std::string ip_address, int port) : m_ip_address(ip_address), m_port(port), m_socket(), m_new_socket(),
                                                              m_incomingMessage(),
                                                              m_socketAddress(), m_socketAddress_len(sizeof(m_socketAddress)),
                                                              m_serverMessage(buildResponse())
@@ -141,5 +135,3 @@ namespace http
             log("Error sending response to client");
         }
     }
-
-} // namespace http

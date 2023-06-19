@@ -7,10 +7,7 @@
 #include <stdlib.h>
 #include <string>
 
-namespace http
-{
-
-    class TcpServer
+class TcpServer
     {
     public:
         TcpServer(std::string ip_address, int port);
@@ -33,7 +30,5 @@ namespace http
         std::string buildResponse();
         void sendResponse();
     };
-
-} // namespace http
 
 #endif
