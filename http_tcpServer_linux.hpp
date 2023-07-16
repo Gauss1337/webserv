@@ -1,12 +1,14 @@
 #ifndef INCLUDED_HTTP_TCPSERVER_LINUX_HPP
 #define INCLUDED_HTTP_TCPSERVER_LINUX_HPP
-
+#pragma once
 #include <stdio.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <stdlib.h>
 #include <string>
+#include <fcntl.h>
 
+const int BUFFER_SIZE = 30720;
 class TcpServer
     {
     public:
